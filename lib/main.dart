@@ -23,6 +23,7 @@ class _HomeState extends State<Home> {
   void _resetCampos() {
     pesoController.clear();
     alturaController.clear();
+    _formKey = GlobalKey<FormState>();
     setState(() {
       _textInfo = "";
     });
