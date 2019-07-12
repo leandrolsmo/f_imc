@@ -6,24 +6,20 @@ void main() {
     home: Home(),
   ));
 }
-
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
 }
-
 class _HomeState extends State<Home> {
   TextEditingController pesoController = TextEditingController();
   TextEditingController alturaController = TextEditingController();
-
-  GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
-
+  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   String _textInfo = "";
 
   void _resetCampos() {
     pesoController.clear();
     alturaController.clear();
-    _formKey = GlobalKey<FormState>();
+    _formKey.currentState.reset();
     setState(() {
       _textInfo = "";
     });
